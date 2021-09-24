@@ -14,6 +14,7 @@ exports.seed = function (knex) {
           hero_image: "test.png",
           author_id: 1,
           category_id: 1,
+          created_at: new Date().toISOString(),
         },
         {
           id: 2,
@@ -24,6 +25,7 @@ exports.seed = function (knex) {
           hero_image: "test.png",
           author_id: 1,
           category_id: 2,
+          created_at: new Date().toISOString(),
         },
         {
           id: 3,
@@ -34,6 +36,7 @@ exports.seed = function (knex) {
           hero_image: "test.png",
           author_id: 2,
           category_id: 1,
+          created_at: new Date().toISOString(),
         },
       ]);
     });
