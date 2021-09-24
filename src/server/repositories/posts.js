@@ -5,6 +5,7 @@ export const getAllPosts = async (page = 1, type = "", typeId = "") => {
   const offsetValue = (page - 1) * perPage;
 
   return await Post.query()
+    .withGraphFetched("author")
     .modify((query) => {
       if (type && typeId && type === "category") {
         query.where("category_id", typeId);
@@ -17,7 +18,7 @@ export const getAllPosts = async (page = 1, type = "", typeId = "") => {
 };
 
 export const getSinglePost = async (id) => {
-  return await Post.query().findById(id);
+  return await Post.query().findById(id).withGraphFetched("author");
 };
 
 export const getPostsByCategoryId = async (categoryId) => {
