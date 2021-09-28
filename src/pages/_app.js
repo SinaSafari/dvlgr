@@ -1,18 +1,27 @@
-// import "../styles/globals.css";
-import "@/styles/globals.scss";
+import {ConfigProvider} from "antd";
+import faIR from "antd/lib/locale/fa_IR";
+import {AppContextProvider} from "@/context/index";
+import GlobalLayout from "@/components/layout/index";
+
+//Style
+import "antd/dist/antd.min.css";
 import "bootstrap/scss/bootstrap.scss";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "@/styles/globals.scss";
 
-import { AppContextProvider } from "@/context/index";
-import Layout from "@/components/layout/index";
 
-function MyApp({ Component, pageProps }) {
-  return (
-    <AppContextProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </AppContextProvider>
-  );
+function MyApp({Component, pageProps}) {
+    return (
+        <ConfigProvider locale={faIR} direction="rtl">
+            <AppContextProvider>
+                <GlobalLayout>
+                    <Component {...pageProps} />
+                </GlobalLayout>
+            </AppContextProvider>
+        </ConfigProvider>
+    );
 }
 
 export default MyApp;

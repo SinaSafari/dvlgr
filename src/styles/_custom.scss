@@ -1,0 +1,50 @@
+.custom {
+
+  .ant-typography {
+    color: inherit;
+
+  }
+
+  .ant-layout-header {
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 10px 30px 0 rgb(82 63 105 / 5%);
+  }
+
+  .ant-layout-footer {
+    padding: 0;
+  }
+
+  .form-select {
+    padding: 0;
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &.ant-typography {
+    color: inherit !important;
+    font-family: inherit;
+  }
+}
+
+.ant-typography h3, h3.ant-typography {
+  font-size: 24px !important;
+}
+
+.ant-typography h4, h4.ant-typography {
+  font-size: 20px !important;
+}
+
+
+.text-danger {
+  color: #ff4d4f;
+}
+
+.ant-input-textarea-show-count:after {
+  float: left;
+}
+
+.ant-form-item .ant-mentions, .ant-form-item textarea.ant-input {
+  resize: none;
+}

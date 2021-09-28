@@ -1,14 +1,26 @@
-import BackgroundAnimate from "@/components/header/backgroundAnimate.component";
-import HeaderContent from "@/components/header/headerContent.component";
-import logos from "@/lib/logos";
+import Featured from "@/components/featured";
+import {Col, Row, Typography} from "antd";
+import RecentlyPost from "@/components/recently-post";
 
-export default function Home({ logos }) {
-  return (
-    <>
-      <BackgroundAnimate logos={logos} />
-      <HeaderContent />
-    </>
-  );
+export default function Home() {
+    const {Title, Text} = Typography;
+    return (
+        <Row gutter={[16, 16]}>
+            <Col xs={{span: 24}}
+                 md={{span: 18}}>
+                <Title level={2} className="title">ویژه های این ماه</Title>
+                <Featured/>
+            </Col>
+            <Col xs={{span: 24}}
+                 md={{span: 6}}>
+                <Title level={4} className="text-center">آخرین نوشته ها</Title>
+            </Col>
+            <Col span={24}>
+                <Title level={2} className="title mt-5">آخرین نوشته ها</Title>
+                <RecentlyPost/>
+            </Col>
+        </Row>
+    );
 }
 
 /**
@@ -17,9 +29,9 @@ export default function Home({ logos }) {
  * @returns {import('next').GetServerSidePropsResult}
  */
 export async function getServerSideProps(ctx) {
-  return {
-    props: {
-      logos: logos.sort(() => Math.random() - 0.5),
-    },
-  };
+    return {
+        props: {
+            // logos: logos.sort(() => Math.random() - 0.5),
+        },
+    };
 }

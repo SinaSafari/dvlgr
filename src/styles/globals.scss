@@ -1,46 +1,7 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-body {
-  background: #f7f7f7;
-}
+@import "font";
+@import "custom";
+@import "basic";
+@import "menubar";
 
-.svg-background {
-  position: relative;
-
-  //overflow: hidden;
-  //height: 600px;
-
-  svg {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    z-index: -1;
-  }
-}
-
-.cls-1 {
-  fill: none;
-  stroke: #dce1fc;
-  stroke-linecap: round;
-  stroke-width: 2px;
-  stroke-dasharray: 8 10;
-}
-
-.cls-2 {
-  fill: #fff;
-}
-
-.cls-3 {
-  fill: #506cf1;
-}
-
-.cls-4 {
-  fill: #dce1fc;
-}
-
-.cls-5 {
-  isolation: isolate;
-}
+@import "featured";
+@import "box";
