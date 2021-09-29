@@ -1,0 +1,30 @@
+.menubar {
+  display: flex;
+  align-items: center;
+  min-height: 65px !important;
+
+  &-item {
+    background-color: #f5f8fa !important;
+    color: #a1a5b7 !important;
+    border: none;
+    height: 40px;
+    padding: 6.4px 20px;
+    border-radius: .5rem;
+    font-size: .8rem;
+
+
+    &:hover {
+      background-color: #f5f8fa;
+      color: #a1a5b7 !important;
+    }
+
+    &.active {
+      color: #009ef7 !important;
+      background-color: #f1faff !important;
+    }
+
+    &:hover {
+      color: #009ef7 !important;
+    }
+  }
+}
