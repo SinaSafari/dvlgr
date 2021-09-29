@@ -6,6 +6,8 @@ export const getAllPosts = async (page = 1, type = "", typeId = "") => {
 
   return await Post.query()
     .withGraphFetched("author")
+    .withGraphFetched("comments")
+    .withGraphFetched("tags")
     .modify((query) => {
       if (type && typeId && type === "category") {
         query.where("category_id", typeId);
@@ -32,8 +34,7 @@ export const getPostsByAuthorId = async (authorId) => {
 };
 
 export const createPost = async (postData, imagefilepath = "") => {
-  // console.log("in service: ", imagefilepath ? imagefilepath : "");
-  await Post.query().insert({
+  let data = {
     title: postData.title,
     slug: postData.slug,
     content: postData.content || "",
@@ -41,5 +42,14 @@ export const createPost = async (postData, imagefilepath = "") => {
     hero_image: imagefilepath,
     author_id: 1,
     category_id: postData.category_id,
-  });
+  };
+
+  if (postData.tags) {
+    data = {
+      ...data,
+      tags: postData.tags,
+    };
+  }
+
+  await Post.query().insertGraph(data, { relate: true });
 };
