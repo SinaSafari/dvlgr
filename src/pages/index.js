@@ -1,6 +1,7 @@
 import Featured from "@/components/featured";
-import {Col, Row, Typography} from "antd";
+import {Col, Divider, Row, Typography} from "antd";
 import RecentlyPost from "@/components/recently-post";
+import Tags from "@/components/tag";
 
 export default function Home() {
     const {Title, Text} = Typography;
@@ -13,7 +14,7 @@ export default function Home() {
             </Col>
             <Col xs={{span: 24}}
                  md={{span: 6}}>
-                <Title level={4} className="text-center">آخرین نوشته ها</Title>
+                <Tags/>
             </Col>
             <Col span={24}>
                 <Title level={2} className="title mt-5">آخرین نوشته ها</Title>

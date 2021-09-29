@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/styles/globals.scss";
 
 
-function MyApp({Component, pageProps}) {
+const MyApp = ({Component, pageProps}) => {
     return (
         <ConfigProvider locale={faIR} direction="rtl">
             <AppContextProvider>

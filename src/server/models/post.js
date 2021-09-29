@@ -1,4 +1,4 @@
-import { Model } from "objection";
+const { Model } = require("objection");
 
 class Post extends Model {
   static get tableName() {
@@ -15,8 +15,8 @@ class Post extends Model {
   }
 
   static get relationMappings() {
-    const User = require("./user");
-    const Category = require("./category");
+    const User = require("./user").default;
+    const Category = require("./category").default;
 
     return {
       author: {

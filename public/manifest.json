@@ -1,0 +1,24 @@
+{
+  "icons": [
+    {
+      "src": "",
+      "sizes": "",
+      "type": "",
+      "density": ""
+    }
+  ],
+  "name": "Devlogger",
+  "display": "standalone",
+  "short_name": "devlogger",
+  "lang": "fa",
+  "dir": "rtl",
+  "description": "devlogger Web App",
+  "scope": "/",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "version": "0.1",
+  "manifest_version": "0.1",
+  "orientation": "portrait",
+  "author": "devlogger team"
+}

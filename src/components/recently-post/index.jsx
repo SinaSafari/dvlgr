@@ -3,7 +3,7 @@ import Link from "next/Link";
 import {Avatar, Button, Col, Row, Space, Typography} from "antd";
 
 const RecentlyPost = () => {
-    const {Title, Text} = Typography;
+    const {Title} = Typography;
     const data = [
         {
             imgAddress: './img/js.jpg',
@@ -59,7 +59,7 @@ const RecentlyPost = () => {
                         <div className="article-box-poster">
                             <Link href={'/'}>
                                 <a>
-                                    <img src={item.imgAddress}/>
+                                    <img src={item.imgAddress} alt="article-img"/>
                                 </a>
                             </Link>
                         </div>
@@ -73,8 +73,10 @@ const RecentlyPost = () => {
 
                             <div className="article-box-title">
                                 <Link href={'/'}>
-                                    <a>
-                                        <Title level={4} ellipsis={{rows: 2}}>
+                                    <a className="text-dark">
+                                        <Title level={5}
+                                               ellipsis={{rows: 2}}
+                                               className="fw-bolder">
                                             {item.title}
                                         </Title>
                                     </a>
@@ -84,8 +86,9 @@ const RecentlyPost = () => {
                             <div>
                                 <Space>
                                     <Avatar src={item.authorImgAddress}/>
-                                    <span className="fw-bold">{item.author}</span> - <span
-                                    className="small">{item.createAt}</span>
+                                    <span className="fw-bold small">{item.author}</span>
+                                    -
+                                    <span className="small">{item.createAt}</span>
                                 </Space>
                             </div>
                             <div className="d-flex justify-content-between align-items-center">

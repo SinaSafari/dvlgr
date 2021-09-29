@@ -5,8 +5,15 @@ class User extends Model {
     return "users";
   }
 
+  $formatJson(json) {
+    json = super.$formatJson(json);
+    delete json.password;
+    delete json.role;
+    return json;
+  }
+
   static get relationMappings() {
-    const Post = require("./post");
+    const Post = require("./post").default;
 
     return {
       posts: {

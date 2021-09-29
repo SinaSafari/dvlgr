@@ -1,6 +1,6 @@
 .article-box {
   display: flex;
-  //align-items: center;
+  align-items: center;
   height: 100%;
   margin: .75rem 0;
   padding: 1rem;
@@ -19,8 +19,8 @@
   }
 
   &-title {
-    height: 70px;
-    margin: 1rem 0;
+    height: 40px;
+    margin: 1.5rem 0;
   }
 
   &-poster {
@@ -42,5 +42,43 @@
     color: #991B1BFF;
     border-radius: 1rem;
     padding: 0 1rem;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    &-poster {
+      min-width: 100px;
+      max-width: 100px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.25rem;
+  background-color: #fff;
+  border-radius: 1.5rem;
+}
+
+.tag {
+  text-decoration: none;
+  font-size: .875rem;
+  background-color: #f3f4f6;
+  border-radius: .75rem;
+  padding: .625rem 1rem;
+  margin-left: .5rem;
+  margin-bottom: .5rem;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: rgb(229, 231, 235);
   }
 }
