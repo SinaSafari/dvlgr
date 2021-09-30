@@ -10,8 +10,10 @@ class Post extends Model {
     this.updated_at = new Date().toISOString();
   }
 
-  $beforeUpdate() {
-    this.updated_at = new Date().toISOString();
+  $beforeUpdate(opt, queryContext) {
+    if (this.content && opt.old.content !== this.content) {
+      this.updated_at = new Date().toISOString();
+    }
   }
 
   static get relationMappings() {

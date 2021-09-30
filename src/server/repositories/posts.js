@@ -33,6 +33,10 @@ export const getPostsByAuthorId = async (authorId) => {
   return await Post.query().where("author_id", authorId).orderBy("created_at");
 };
 
+export const incrementPostView = async (id) => {
+  await Post.query().where("id", "=", id).increment("view_count", 1);
+};
+
 export const createPost = async (postData, imagefilepath = "") => {
   let data = {
     title: postData.title,

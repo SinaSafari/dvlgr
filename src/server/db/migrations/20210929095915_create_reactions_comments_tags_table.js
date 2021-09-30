@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema
     .table("posts", (table) => {
-      table.integer("view_count");
+      table.integer("view_count").unsigned().defaultTo(0);
     })
     .createTable("tags", (table) => {
       table.increments("id").primary();

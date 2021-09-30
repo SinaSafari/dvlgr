@@ -34,5 +34,9 @@ export default NextAuth({
       }
       return Promise.resolve("/");
     },
+
+    async signIn(user, account, profile) {
+      return true;
+    },
   },
 });

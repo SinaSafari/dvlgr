@@ -1,7 +1,7 @@
 import { successResponse, failedResponse } from "@/lib/http/response";
 import { CheckAuth } from "@/server/middlewares/auth";
 import Post from "@/server/models/post";
-import { getSinglePost } from "@/server/repositories/posts";
+import { getSinglePost, incrementPostView } from "@/server/repositories/posts";
 
 /**
  *
@@ -13,6 +13,7 @@ export default async function BlogIndexApi(req, res) {
     try {
       // TODO: add functionality
       const { id } = req.query;
+      await incrementPostView(id);
       const post = await getSinglePost(id);
 
       return res.json(successResponse(post, "list of posts route hitted"));
