@@ -4,7 +4,7 @@
  */
 export const NextSeoHomePageProps = () => {
   return {
-    defaultTitle: "devlogger",
+    title: "devlogger",
     canonical: "http://devlogger.ir/",
     description: "devlogger website",
   };
