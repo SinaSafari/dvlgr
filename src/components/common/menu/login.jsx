@@ -1,25 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { signIn, getProviders } from "next-auth/client";
+import { Spin, Menu } from "antd";
+
+export const AuthMenu = () => (
+  <Menu>
+    <AuthenticationBar />
+  </Menu>
+);
 
 export const AuthenticationBar = () => {
+  const [providers, setProviders] = useState([]);
+
+  useEffect(() => {
+    const loadProviders = async () => {
+      const providersList = await getProviders();
+      setProviders(providersList);
+    };
+
+    loadProviders();
+  }, []);
+
   return (
     <>
       <div className="login-page-container">
-        <h1>ورود به دولاگر</h1>
-        {Object.values(providers).map((provider) => {
-          return (
-            <SocialLoginBtn
-              key={provider.id}
-              providerId={provider.id}
-              providerName={provider.name}
-            />
-          );
-        })}
+        {!providers ? (
+          <>
+            <Spin />
+          </>
+        ) : (
+          <>
+            {Object.values(providers).map((provider) => {
+              return (
+                <SocialLoginBtn
+                  key={provider.id}
+                  providerId={provider.id}
+                  providerName={provider.name}
+                />
+              );
+            })}
+          </>
+        )}
       </div>
       <style jsx>{`
         .login-page-container {
           max-width: 80%;
-          margin: 20px auto;
+          margin: 10px auto;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -62,7 +87,7 @@ export const SocialLoginBtn = ({ providerName, providerId }) => {
       </button>
       <style jsx>{`
         .login-btn {
-          margin: 10px;
+          margin: 5px;
           /* background: #de5246; */
           color: #fff;
           padding: 8px 30px;

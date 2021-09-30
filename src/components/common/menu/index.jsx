@@ -2,6 +2,11 @@ import React from "react";
 import { Col, Row, Space, Switch } from "antd";
 import Link from "next/link";
 
+import { Dropdown, Spin } from "antd";
+import { DownOutlined } from "@ant-design/icons";
+import { AuthMenu } from "./login";
+import { useSession, signOut } from "next-auth/client";
+
 const Menu = () => {
   const setThem = (checked) => {
     if (!checked) {
@@ -10,6 +15,9 @@ const Menu = () => {
       localStorage.setItem("them", "light");
     }
   };
+
+  const [session, sessionLoading] = useSession();
+
   return (
     <Row justify="center">
       <Col xs={{ span: 23 }} md={{ span: 20 }}>
@@ -26,6 +34,39 @@ const Menu = () => {
               <Link href={"/contact-us"}>
                 <a className="menubar-item">تماس با ما</a>
               </Link>
+
+              <Link href={"/contact-us"}>
+                <a className="menubar-item">تماس با ما</a>
+              </Link>
+
+              {sessionLoading ? (
+                <>
+                  <Spin />
+                </>
+              ) : (
+                <>
+                  {session ? (
+                    <>
+                      <Link href={"#"} passHref>
+                        <a className="menubar-item" onClick={() => signOut()}>
+                          خروج
+                        </a>
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <Dropdown overlay={AuthMenu}>
+                        <a
+                          className="ant-dropdown-link menubar-item"
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          ورود <DownOutlined />
+                        </a>
+                      </Dropdown>
+                    </>
+                  )}
+                </>
+              )}
             </Space>
           </Col>
           <Col span={6} align="end">
