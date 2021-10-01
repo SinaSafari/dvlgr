@@ -16,6 +16,12 @@ class Post extends Model {
     }
   }
 
+  $formatJson(json) {
+    json = super.$formatJson(json);
+    json.featured = json.featured == 0 ? false : true;
+    return json;
+  }
+
   static get relationMappings() {
     const User = require("./user").default;
     const Category = require("./category").default;
