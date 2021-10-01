@@ -1,6 +1,6 @@
 import { failedResponse, successResponse } from "@/lib/http/response";
+import { getPopularCategories } from "@/server/repositories/category";
 import { getFeaturedPosts, latestPosts } from "@/server/repositories/posts";
-import { getFeaturedTags } from "@/server/repositories/tags";
 
 /**
  *
@@ -10,7 +10,7 @@ import { getFeaturedTags } from "@/server/repositories/tags";
 export default async function HomePageApi(req, res) {
   if (req.method === "GET") {
     const resposnse = {
-      topTags: await getFeaturedTags(),
+      topCategories: await getPopularCategories(),
       featuredPosts: await getFeaturedPosts(),
       latestPosts: await latestPosts(),
     };
