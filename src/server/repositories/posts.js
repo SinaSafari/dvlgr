@@ -1,5 +1,15 @@
 import Post from "@/server/models/post";
 
+/**
+ * get paginated posts by author or category.
+ *
+ * @todo add tag functionality as well
+ *
+ * @param {number} page
+ * @param {string} type
+ * @param {number|string} typeId
+ * @returns
+ */
 export const getAllPosts = async (page = 1, type = "", typeId = "") => {
   const perPage = 8;
   const offsetValue = (page - 1) * perPage;
@@ -56,4 +66,15 @@ export const createPost = async (postData, imagefilepath = "") => {
   }
 
   await Post.query().insertGraph(data, { relate: true });
+};
+
+export const latestPosts = async () => {
+  return await Post.query().orderBy("created_at", "DESC").limit(4);
+};
+
+export const getFeaturedPosts = async () => {
+  return await Post.query()
+    .where("featured", "=", true)
+    .orderBy("created_at", "DESC")
+    .limit(4);
 };
