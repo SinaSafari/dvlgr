@@ -16,7 +16,8 @@ export default async function CreatePostApi(req, res) {
     case "GET":
       return pageDataController(req, res);
     case "POST":
-      return createPostController(req, res);
+      console.log("sdfjksdf");
+      return await createPostController(req, res);
     default:
       return res.status(405).json(failedResponse("method not allowed", {}));
   }
@@ -32,6 +33,8 @@ async function createPostController(req, res) {
   try {
     const { err, fields, files } = await new Promise((resolve, reject) => {
       const form = new formidable();
+      console.log("Im here");
+
       form.parse(req, (err, fields, files) => {
         if (err) reject({ err });
         resolve({ err, fields, files });
@@ -80,3 +83,12 @@ async function pageDataController(req, res) {
       .json(failedResponse("somethign went wrong: " + err.toString()));
   }
 }
+
+/**
+ * for formidble works, FormData shouldn't be parsed by bodyParser
+ */
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};

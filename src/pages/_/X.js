@@ -1,13 +1,18 @@
 import Editor from "@/components/editor/Editor";
 import { MDRenderer } from "@/components/editor/MDRenderer";
 import React from "react";
+import axios from "axios";
 
 export default function X(props) {
   const { markdown } = props;
+
   return (
     <div className="container">
-      {/* <MDRenderer md={markdown} /> */}
-      <Editor />
+      <MDRenderer md={markdown} />
+      {/* <Editor
+        tags={props.createData.tags}
+        categories={props.createData.categories}
+      /> */}
     </div>
   );
 }
@@ -53,8 +58,14 @@ print(report.sum)
 
 The lift coefficient <span dir="ltr">($C_L$)</span> is a dimensionless coefficient.
 `;
+
+  const { data } = await axios.get("http://localhost:3000/api/posts/create");
+
+  console.log(data);
+
   return {
     props: {
+      createData: data.data,
       markdown,
     },
   };

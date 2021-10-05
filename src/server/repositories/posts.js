@@ -52,18 +52,27 @@ export const createPost = async (postData, imagefilepath = "") => {
     title: postData.title,
     slug: postData.slug,
     content: postData.content || "",
-    status: "draft",
+    status: postData.status || "draft",
     hero_image: imagefilepath,
     author_id: 1,
-    category_id: postData.category_id,
+    category_id: postData.category,
   };
 
   if (postData.tags) {
+    const tagsList = JSON.parse(postData.tags);
+    let tagsArr = [];
+    tagsList.forEach((i) => {
+      let temp = {};
+      temp.id = i;
+      tagsArr.push(temp);
+    });
     data = {
       ...data,
-      tags: postData.tags,
+      tags: tagsArr,
     };
   }
+
+  console.log(data);
 
   await Post.query().insertGraph(data, { relate: true });
 };

@@ -5,6 +5,7 @@ export type Action = { type: string; payload: any };
 export type ErrorType = { type: string; message: string };
 export type TagType = any;
 export type TabType = "editor" | "preview";
+export type StatusType = "draft" | "published" | "to_edit";
 export type FromType = {
   title: string;
   slug: string;
@@ -13,6 +14,7 @@ export type FromType = {
   tags: Array<TagType>;
   category: string;
   isFeatured: boolean;
+  status: StatusType;
 };
 export type EditorState = {
   loading: boolean;
