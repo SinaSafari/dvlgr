@@ -24,3 +24,20 @@ body {
     right: 0;
   }
 }
+
+
+.social-media {
+  margin: 0 .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  background-color: #edf2f7;
+
+  i {
+    display: flex;
+  }
+}

@@ -1,0 +1,24 @@
+.tag {
+  text-decoration: none;
+  font-size: .875rem;
+  border-radius: .75rem;
+  padding: .2rem 1rem;
+  border: 1px solid transparent;
+
+  &-large {
+    padding: .625rem 1rem;
+  }
+
+  &:hover {
+    border-color: rgb(229, 231, 235);
+  }
+
+  &-red {
+    background-color: #FEE2E2FF;
+    color: #991B1BFF;
+  }
+
+  &-gray {
+    background-color: #f3f4f6;
+  }
+}

@@ -19,6 +19,23 @@
     padding: 0;
   }
 
+  .ant-comment-content {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    &-author {
+      justify-content: space-between;
+      margin-bottom: .5rem;
+
+      &-name {
+        font-weight: bolder;
+      }
+    }
+  }
+  .ant-comment-actions{
+    text-align: left;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

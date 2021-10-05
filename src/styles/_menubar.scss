@@ -28,3 +28,20 @@
     }
   }
 }
+
+.switch-them {
+  .ant-switch {
+    border: 0;
+    font-size: 1rem;
+    color: #fff;
+    width: 50px;
+    height: 24px;
+    background: linear-gradient(45deg, #3366FF, #AC15B8);
+
+    &-checked {
+      background: linear-gradient(45deg, #FF7D6B, #FFD64C);
+    }
+
+  }
+
+}
