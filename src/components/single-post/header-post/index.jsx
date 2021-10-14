@@ -42,7 +42,7 @@ const HeaderPost = () => {
                             </Space>
                         </Button>
                         <Button type="primary" danger size="small" shape="round"
-                                onClick={() => document.getElementById('comment').scrollIntoView({ behavior: 'smooth' })}>
+                                onClick={() => document.getElementById('comment-container').scrollIntoView({ behavior: 'smooth' })}>
                             <Space>
                                 <span className="small">{'15'}</span>
                                 <i className="bi bi-chat-square-dots-fill"/>

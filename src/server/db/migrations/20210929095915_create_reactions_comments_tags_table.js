@@ -6,7 +6,7 @@ exports.up = function (knex) {
     .createTable("tags", (table) => {
       table.increments("id").primary();
       table.string("title");
-      table.integer("posts").comment("how many posts have this tag attached.");
+      table.integer("posts").comment("how many posts have this category attached.");
     })
     .createTable("post_tags", (table) => {
       table.increments("id").primary();

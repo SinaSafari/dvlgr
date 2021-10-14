@@ -7,21 +7,21 @@ exports.seed = function (knex) {
       return knex("comments").insert([
         {
           id: 1,
-          text: "comment text: 1",
+          text: "comment-container text: 1",
           post_id: 1,
           author_id: 1,
           created_at: new Date().toISOString(),
         },
         {
           id: 2,
-          text: "comment text: 2",
+          text: "comment-container text: 2",
           post_id: 1,
           author_id: 2,
           created_at: new Date().toISOString(),
         },
         {
           id: 3,
-          text: "comment text: 3",
+          text: "comment-container text: 3",
           post_id: 2,
           author_id: 1,
           created_at: new Date().toISOString(),

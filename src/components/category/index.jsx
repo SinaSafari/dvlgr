@@ -2,7 +2,7 @@ import React from "react";
 import {Col, Divider, Space, Typography} from "antd";
 import Link from "next/link";
 
-const Tags = () => {
+const Category = () => {
     const {Title} = Typography;
     const data = [
         {title: "Js", count: 20},
@@ -37,4 +37,4 @@ const Tags = () => {
         </>
     );
 };
-export default Tags;
+export default Category;

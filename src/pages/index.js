@@ -1,9 +1,9 @@
 import Featured from "@/components/featured";
 import { Col, Divider, Row, Typography } from "antd";
 import RecentlyPost from "@/components/recently-post";
-import Tags from "@/components/tag";
 import { NextSeo } from "next-seo";
 import { NextSeoHomePageProps } from "@/lib/seo/index";
+import Category from "@/components/category";
 
 export default function Home() {
   const { Title, Text } = Typography;
@@ -18,7 +18,7 @@ export default function Home() {
           <Featured />
         </Col>
         <Col xs={{ span: 24 }} md={{ span: 6 }}>
-          <Tags />
+          <Category />
         </Col>
         <Col span={24}>
           <Title level={2} className="title mt-5">
