@@ -65,6 +65,20 @@ class Post extends Model {
           to: "tags.id",
         },
       },
+      likes: {
+        relation: Model.HasManyRelation,
+        modelClass: require("./like").default,
+        filter(builder) {
+          builder.where("type", "post");
+        },
+        beforeInsert(model) {
+          model.type = "post";
+        },
+        join: {
+          from: "posts.id",
+          to: "likes.likeable_id",
+        },
+      },
     };
   }
 }
