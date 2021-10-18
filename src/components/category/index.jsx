@@ -5,14 +5,14 @@ import Link from "next/link";
 const Category = () => {
     const {Title} = Typography;
     const data = [
-        {title: "Js", count: 20},
-        {title: "C#", count: 30},
-        {title: "Swift", count: 10},
-        {title: "Rect", count: 13},
-        {title: "Angular", count: 20},
-        {title: "Vue", count: 3},
-        {title: "Ui/Ux", count: 40},
-        {title: "General", count: 88},
+        {title: "js", count: 20},
+        {title: "c#", count: 30},
+        {title: "swift", count: 10},
+        {title: "rect", count: 13},
+        {title: "angular", count: 20},
+        {title: "vue", count: 3},
+        {title: "ui/ux", count: 40},
+        {title: "general", count: 88},
     ];
     return (
         <>
@@ -24,7 +24,7 @@ const Category = () => {
                     <Divider dashed/>
                 </div>
                 {data.map((item, index) => (
-                    <Link href={`/${item.title}`} key={index}>
+                    <Link href={`/posts/${item.title}`} key={index}>
                         <a className="tag tag-large tag-gray mb-2 me-2">
                             <Space>
                                 <span>{item.title}</span>

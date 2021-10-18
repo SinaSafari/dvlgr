@@ -116,7 +116,6 @@ export default function BlogDetailsPage(props) {
                     </div>
                 </div>
             </Col>
-
             <Col xs={{span: 24}} md={{span: 17}}>
                 <CommentContainer/>
             </Col>

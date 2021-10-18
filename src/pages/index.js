@@ -6,7 +6,7 @@ import { NextSeoHomePageProps } from "@/lib/seo/index";
 import Category from "@/components/category";
 
 export default function Home() {
-  const { Title, Text } = Typography;
+  const { Title } = Typography;
   return (
     <>
       <NextSeo {...NextSeoHomePageProps()} />
