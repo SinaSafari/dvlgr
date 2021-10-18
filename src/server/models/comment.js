@@ -34,6 +34,16 @@ class Comment extends Model {
           to: "posts.id",
         },
       },
+      likes: {
+        relation: Model.HasManyRelation,
+        modelClass: require("./like").default,
+        filter: (builder) => builder.where("type", "comment"),
+        beforeInsert: (model) => (model.type = "comment"),
+        join: {
+          from: "comments.id",
+          to: "likes.likeable_id",
+        },
+      },
     };
   }
 }
