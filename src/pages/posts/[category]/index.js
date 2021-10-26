@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Col, Row, Typography, Radio, Space, Form, Input, Button} from "antd";
+import {Col, Row, Typography, Radio, Space, Form, Input, Button, Pagination} from "antd";
 import {useRouter} from "next/router";
 import RecentlyPost from "@/components/recently-post";
 
@@ -51,32 +51,36 @@ const BlogIndexPage = (props) => {
                     </div>
                 </Col>
                 <Col xs={{span: 24}} md={{span: 17}}>
-                    <div className="box d-flex justify-content-between">
-                        <div>
-                            <Text>
-                                <Space>
-                                    <span>1305</span>
-                                    <span>مورد یافت شد</span>
-                                </Space>
-                            </Text>
-                        </div>
-                        <div>
-                            <Space>
-                                <span>مرتب سازی بر اساس:</span>
-                                <Radio.Group defaultValue="a" size="small"   optionType="button"
-                                             buttonStyle="solid">
-                                    <Radio.Button value="a">جدیدترین</Radio.Button>
-                                    <Radio.Button value="b">بازدید بیشتر</Radio.Button>
-                                </Radio.Group>
-                            </Space>
-                        </div>
-                    </div>
-
-                </Col>
-                <Col xs={{span: 24}} md={{span: 17}}>
-
-
-
+                    <Row gutter={[0, 0]}>
+                        <Col span={24}>
+                            <div className="box d-flex justify-content-between">
+                                <div>
+                                    <Text>
+                                        <Space>
+                                            <span>1305</span>
+                                            <span>مورد یافت شد</span>
+                                        </Space>
+                                    </Text>
+                                </div>
+                                <div>
+                                    <Space>
+                                        <span>مرتب سازی بر اساس:</span>
+                                        <Radio.Group defaultValue="a" size="small" optionType="button"
+                                                     buttonStyle="solid">
+                                            <Radio.Button value="a">جدیدترین</Radio.Button>
+                                            <Radio.Button value="b">بازدید بیشتر</Radio.Button>
+                                        </Radio.Group>
+                                    </Space>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col span={24}>
+                            <Row gutter={[16,32]}>
+                                <RecentlyPost/>
+                                <Pagination/>
+                            </Row>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
         </>

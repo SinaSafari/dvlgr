@@ -11,7 +11,7 @@ const Category = () => {
         {title: "rect", count: 13},
         {title: "angular", count: 20},
         {title: "vue", count: 3},
-        {title: "ui/ux", count: 40},
+        {title: "ui-ux", count: 40},
         {title: "general", count: 88},
     ];
     return (
