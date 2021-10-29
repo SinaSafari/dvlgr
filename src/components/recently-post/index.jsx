@@ -55,7 +55,7 @@ const RecentlyPost = () => {
         <Row gutter={[16, 16]}>
             {data.map((item) => (
                 <Col xs={{span: 24}} md={{span: 12}} key={item.id}>
-                    <article className="article-box bg-white">
+                    <article className="article-box">
                         <div className="d-flex">
                             <div className="article-box-poster">
                                 <Link href={"/"}>

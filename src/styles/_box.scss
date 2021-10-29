@@ -1,5 +1,6 @@
 .article-box {
   //display: flex;
+  background-color: var(--bg-box);
   align-items: center;
   height: 100%;
   margin: .75rem 0;
@@ -58,7 +59,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 1.25rem;
-  background-color: #fff;
+  background-color: var(--bg-box);
   border-radius: 1rem;
   box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0px;
 }
@@ -68,7 +69,7 @@
   padding: 1.25rem;
   margin: 1rem 0;
   border-radius: 1rem;
-  background-color: #fff;
+  background-color: var(--bg-box);
   //background-color: #2d3748;
   box-shadow: inset 0px -3px 0px 0px #718096, rgba(#718096, 0.1) 0px 4px 6px -1px, rgba(#718096, 0.06) 0px 2px 4px -1px;
   //box-shadow: inset 0px -3px 0px 0px #fff, rgba(#fff, 0.1) 0px 4px 6px -1px, rgba(#fff, 0.06) 0px 2px 4px -1px;

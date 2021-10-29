@@ -19,7 +19,7 @@ const GlobalLayout = ({children}) => {
                     </Col>
                 </Row>
             </Content>
-            <Footer className="py-3 mt-5 bg-light">
+            <Footer className="py-3 mt-5">
                 <FooterContent/>
             </Footer>
         </Layout>

@@ -11,8 +11,10 @@ const Menu = () => {
     const setThem = (checked) => {
         if (!checked) {
             localStorage.setItem("them", "dark");
+            document.documentElement.dataset.theme = "dark";
         } else {
             localStorage.setItem("them", "light");
+            document.documentElement.dataset.theme = "light";
         }
     };
 
