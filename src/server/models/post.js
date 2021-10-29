@@ -42,7 +42,7 @@ class Post extends Model {
         modelClass: Category,
         join: {
           from: "posts.category_id",
-          to: "category.id",
+          to: "categories.id",
         },
       },
       comments: {
