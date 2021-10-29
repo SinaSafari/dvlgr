@@ -6,14 +6,16 @@ class Category extends Model {
   }
 
   static get relationMappings() {
-    const Post = require("./post");
+    const Post = require("./post").default;
 
     return {
-      relation: Model.HasManyRelation,
-      modelClass: Post,
-      join: {
-        from: "categories.id",
-        to: "posts.category_id",
+      posts: {
+        relation: Model.HasManyRelation,
+        modelClass: Post,
+        join: {
+          from: "categories.id",
+          to: "posts.category_id",
+        },
       },
     };
   }

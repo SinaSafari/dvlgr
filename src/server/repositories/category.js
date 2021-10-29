@@ -1,5 +1,6 @@
 import Category from "../models/category";
 
 export const getPopularCategories = async () => {
-  return await Category.query().orderBy("posts", "DESC").limit(8);
+  // TODO: add query for most popular posts
+  return await Category.query();
 };
