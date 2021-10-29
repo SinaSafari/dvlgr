@@ -142,7 +142,7 @@ export async function getServerSideProps(ctx) {
   const jsonres = await res.json();
   return {
     props: {
-      md: markdown,
+      // md: markdown,
       data: jsonres.data,
     },
   };

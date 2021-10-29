@@ -277,6 +277,8 @@ exports.seed = function (knex) {
   کارایی Array.reduce و مفهوم reducer چیزی نیست که شاید هر روز به کارمون بیاد اما دونستن اون میتونه تو موقعیت هایی که نوشتن یه لاجیک سخت برامون دردسر شده کمکمون کنه. علاوه بر اون باعث درک بهتر از ابزار های دیگه مثل redux میشه. علاوه بر اون استفاده از ابزار دیگه ای مثل useReducer میتونه باعث بهتر شدن performance اپلیکیشن بشه که خب هر چیزی که حتی ذره ای به بهبود performance کمک کنه به شدت ارزشمند هست.
   
   توی قسمت دوم این مقاله، استفاده از این کانسپت reducer در react به کمک useReducer رو بررسی خواهیم کرد.`;
+
+  const content2 = ``;
   // Deletes ALL existing entries
   return knex("posts")
     .del()
@@ -323,7 +325,7 @@ exports.seed = function (knex) {
           content: content,
           status: "published",
           hero_image: "test.png",
-          author_id: 2,
+          author_id: 1,
           category_id: 1,
           created_at: new Date().toISOString(),
         },
