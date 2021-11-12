@@ -1,0 +1,29 @@
+.hero-header {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #1488cc, #2b32b2);
+  width: 100%;
+  height: 260px;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  &-img {
+    position: absolute;
+    left: 30px;
+    bottom: 25px;
+  }
+}
+
+.banner {
+  background: url(../../public/img/pat.png);
+  height: 100%;
+  width: 100%;
+  background-size: 11rem;
+  position: absolute;
+  opacity: 0.09;
+  top: 0;
+  left: 0;
+  filter: invert(1);
+  z-index: -1;
+}
